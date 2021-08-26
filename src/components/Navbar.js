@@ -5,13 +5,13 @@ import styled from 'styled-components';
 import { MdMenu, MdClose } from 'react-icons/md'
 const NavBarStyles = styled.div
   `
-background-color:red;
 z-index:100;
 top:0;
 left:0;
 width:100%;
-padding: 1rem 0;
-background: var(--dark-bg);
+padding: 2rem 1rem;
+background-color:#ffff;
+alignment: center;
 ul {
     max-width: 1200px;
     margin: 0 auto;
@@ -19,23 +19,26 @@ ul {
     text-align: center;
     li {
       display: inline-block;
-      border-radius: 8px;
-      transition: 0.3s ease background-color;
-      padding: 0.5rem 1rem;
+      alignment: center;
+      transition: 0.3s ease  
+      padding: 3rem 3rem;
       &:hover {
-        background-color: var(--deep-dark);
+        padding: 0 0;
+        border-bottom: 2px solid var(--primary-color);
       }
     }
     a {
       display: inline-block;
       font-family: 'RobotoMono Regular';
-      padding: 1rem 2rem;
       font-size: 2rem;
-      color: var(--gray-1);
-      outline: none;
+      padding: 0rem 1rem;
+      color: var(--primary-color);
+      outline: none; 
+      alignment: bottom;
     }
     .active {
-      color: var(--white);
+      padding: 0 0;
+      border-bottom: 2px solid var(--primary-color);
     }
   }
   .menuIcon {
@@ -43,6 +46,7 @@ ul {
     right: 1rem;
     top: 1rem;
     width: 3rem;
+    color: var(--primary-color)
     cursor: pointer;
     display: none;
     outline: none;
@@ -55,17 +59,17 @@ ul {
      padding:0px;
     .menuIcon {
       display: block;
+      color: var(--primary-color)
     }
     .hide-item {
       transform: translateX(calc(100%));
+      display: none;
     }
     .navItems {
-    
     transition: .3s ease transform;
-    background-color: var(--deep-dark);
+    background-color: var(--primary-color);
     padding: 2rem;
-    width: 60%;
-    max-width: 250px;
+    max-width:50%;
     border-radius: 12px;
     position: absolute;
     right: 1px;
@@ -75,14 +79,25 @@ ul {
       width: 3rem;
       margin: 0 0 0 auto;
       cursor: pointer;
+      color: white;
       *{
         pointer-events: none;
       }
     }
+    .active {
+      height:30px;
+      border-bottom: 2px solid white;
+      alignment: right;
+      padding: 0 1rem;
+      margin-bottom:10px;
+    }
     li {
       display: block;
-      margin-bottom: 1px;
+      // width:120px;
+      height:40px;
+      color: white;
     }
+   
     }
     
   }
@@ -115,14 +130,13 @@ export default function NavMenu() {
           tabIndex={0}
         >
           <li>Home</li>
-        </NavLink>
-        <NavLink to="/about"
+        </NavLink> <NavLink to="/experience"
           onClick={() => setShowNav(!showNav)}
           role="button"
           onKeyDown={() => setShowNav(!showNav)}
           tabIndex={0}
         >
-          <li>About</li>
+          <li>Experience</li>
         </NavLink>
         <NavLink to="/projects"
           onClick={() => setShowNav(!showNav)}
@@ -132,6 +146,16 @@ export default function NavMenu() {
         >
           <li>Projects</li>
         </NavLink>
+        <NavLink to="/about"
+          onClick={() => setShowNav(!showNav)}
+          role="button"
+          onKeyDown={() => setShowNav(!showNav)}
+          tabIndex={0}
+        >
+          <li>About</li>
+        </NavLink>
+
+
         <NavLink to="/contact"
           onClick={() => setShowNav(!showNav)}
           role="button"

@@ -6,6 +6,7 @@ import Home from './components/pages/home';
 import About from './components/pages/about';
 import Projects from './components/pages/projects';
 import Contact from './components/pages/contact';
+import Experience from './components/pages/Experience';
 class ShoppingList extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class ShoppingList extends Component {
           <Switch>
             <Route path="/about"><About /></Route>
             <Route path="/projects"><Projects /></Route>
+            <Route path="/experience"><Experience /></Route>
             <Route path="/contact"><Contact /></Route>
             <Route path="/"><Home /></Route>
 
