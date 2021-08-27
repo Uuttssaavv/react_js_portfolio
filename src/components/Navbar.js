@@ -16,28 +16,30 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
     width: 90%;
+    padding: 0.5rem 0;
     text-align: center;
     li {
       display: inline-block;
-      alignment: center;
-      transition: 0.3s ease  
-      padding: 3rem 3rem;
+      border-radius: 8px;
+      transition: 0.3s ease padding;
       &:hover {
-        padding: 0 0;
-        border-bottom: 2px solid var(--primary-color);
+      border-radius: 8px;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5rem 2rem;
       }
     }
     a {
       display: inline-block;
       font-family: 'RobotoMono Regular';
       font-size: 2rem;
-      padding: 0rem 1rem;
+      padding: 1rem 2rem;
       color: var(--primary-color);
       outline: none; 
       alignment: bottom;
     }
     .active {
-      padding: 0 0;
+      padding: 0 1rem;
       border-bottom: 2px solid var(--primary-color);
     }
   }
