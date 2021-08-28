@@ -5,14 +5,14 @@ import { MdMenu, MdClose } from "react-icons/md";
 const NavBarStyles = styled.div`
 left: 0;
 top: 0;
-z-index: 1;
+position: fixed;
+z-index: 100;
 width:100%;
-padding: 2rem 1rem;
+padding: 1rem 1rem;
 background-color:#ffff;
 alignment: center;
 ul {
   display: inline-flex;
- 
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -80,7 +80,7 @@ ul {
      }
     
     position: fixed;
-     padding:0px;
+     padding:2px;
     .menuIcon {
       display: block;
       color: var(--primary-color)
@@ -156,7 +156,7 @@ export default function NavMenu() {
         >
           <MdClose />
         </div>
-        <h2 className="nickname"> theutsavg. </h2>
+        <h1 className="nickname"> theutsavg. </h1>
 
         <div className="routes">
           <NavLink
@@ -168,7 +168,7 @@ export default function NavMenu() {
             tabIndex={0}
           >
             <li>Home</li>
-          </NavLink>{" "}
+          </NavLink>
           <NavLink
             to="/experience"
             onClick={() => setShowNav(!showNav)}

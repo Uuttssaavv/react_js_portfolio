@@ -5,20 +5,21 @@ import styled from "styled-components";
 
 const HomeStyle = styled.div`
   min-width: 100%;
+  margin: 3rem 0;
   .home-section {
     display: inline-flex;
     margin: 0;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     .photocard {
+      margin-top: 5rem;
       width: 25%;
     }
   }
   @media only screen and (max-width: 768px) {
     .home-section {
       display: inline-flex;
-      flex-direction: column;
       margin: 0;
       justify-content: center;
       align-items: center;
@@ -33,6 +34,12 @@ const HomeStyle = styled.div`
 export default function Home() {
   return (
     <HomeStyle>
+      <div className="home-section">
+        <div className="photocard">
+          <PhotoCard />
+        </div>
+        <IntroDescription />
+      </div>
       <div className="home-section">
         <div className="photocard">
           <PhotoCard />
