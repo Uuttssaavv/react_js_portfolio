@@ -5,34 +5,27 @@ import flutter from "../assets/logos/flutter.png";
 import react from "../assets/logos/react.png";
 import dj from "../assets/logos/dj.png";
 import styled from "styled-components";
-const IntroductionStyle = styled.div`
+const PhotoCardStyle = styled.div`
+  min-width: 25%;
   .container {
     margin-top: 2rem;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    float: left;
   }
   .nickname {
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    text-align: left;
     display: none;
     color: var(--primary-color);
   }
   .intro-container {
-    width: 25%;
     text-align: center;
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: var(--primary-color);
     .framework-roww {
+      max-width: 100%;
       display: inline-flex;
       gap: 12px;
       justify-content: space-evenly;
-      width: 100%;
       text-align: center;
       .framework {
         height: 5rem;
@@ -41,7 +34,6 @@ const IntroductionStyle = styled.div`
         position: relative;
         border-radius: 50%;
         padding: 0 0;
-        // background-color: white;
         .framework-image {
           border-radius: 50%;
         }
@@ -50,24 +42,29 @@ const IntroductionStyle = styled.div`
   }
   .utsavImage {
     border-radius: 12px;
-    width: 100%;
     height: 80%;
     alignment: center;
   }
   //for mobile ui
   @media only screen and (max-width: 768px) {
-    .intro-container {
+    .container {
       width: 65%;
-      display: inline-block;
+      alignment: centre;
+      float: none;
+      .nickname {
+        display: block;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+        text-align: left;
+      }
     }
   }
 `;
 
-export default function Introduction() {
+export default function PhotoCard() {
   return (
-    <IntroductionStyle>
+    <PhotoCardStyle>
       <div className="container">
-        <h2 className="nickname"> theutsavg. </h2>
         <div className="intro-container">
           <img src={MyImg} alt="utsav img" className="utsavImage" />
           <div className="framework-roww">
@@ -87,6 +84,6 @@ export default function Introduction() {
           </div>
         </div>
       </div>
-    </IntroductionStyle>
+    </PhotoCardStyle>
   );
 }

@@ -12,11 +12,10 @@ background-color:#ffff;
 alignment: center;
 ul {
   display: inline-flex;
-  margin-left: 5%;
+ 
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  width: 90%;
+  width: 100%;
   padding: 0.5rem 0;
   text-align: center;
   li {
@@ -48,8 +47,8 @@ ul {
 }  .menuIcon {
     position: absolute;
     right: 1rem;
-    top: 1rem;
-    width: 3rem;
+    top: 2rem;
+    width: 2.5rem;
     color: var(--primary-color)
     cursor: pointer;
     display: none;
@@ -60,14 +59,26 @@ ul {
   }
   .nickname{
     margin-bottom: 1rem;
-    margin-left: 1rem;
+    margin-left: 3rem;
     text-align: left;
     color: var(--primary-color);
   }
+  .icon-and-logo{
+    display: none;
+  }
+ 
    @media only screen and (max-width: 768px) {
+    .icon-and-logo{
+      display: inline-flex;
+      margin-top:2rem;
+      .nickname{
+        margin-left:1rem;
+      }
+      }
      ul{
        display: block;
      }
+    
     position: fixed;
      padding:0px;
     .menuIcon {
@@ -123,14 +134,17 @@ export default function NavMenu() {
   const [showNav, setShowNav] = useState(false);
   return (
     <NavBarStyles>
-      <div
-        className="menuIcon"
-        onClick={() => setShowNav(!showNav)}
-        role="button"
-        onKeyDown={() => setShowNav(!showNav)}
-        tabIndex={0}
-      >
-        <MdMenu />
+      <div className="icon-and-logo">
+        <h2 className="nickname"> theutsavg. </h2>
+        <div
+          className="menuIcon"
+          onClick={() => setShowNav(!showNav)}
+          role="button"
+          onKeyDown={() => setShowNav(!showNav)}
+          tabIndex={0}
+        >
+          <MdMenu />
+        </div>
       </div>
       <ul className={!showNav ? "navItems hide-item" : "navItems"}>
         <div
@@ -171,7 +185,7 @@ export default function NavMenu() {
             onKeyDown={() => setShowNav(!showNav)}
             tabIndex={0}
           >
-            <li>Projects</li>
+            <li>My Works</li>
           </NavLink>
           <NavLink
             to="/about"
